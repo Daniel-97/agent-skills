@@ -21,6 +21,7 @@ Solo `SKILL.md` è obbligatorio: le altre cartelle si aggiungono solo se la skil
 | Skill | Descrizione | Ultimo aggiornamento |
 |---|---|---|
 | [example-skill](skills/example-skill/SKILL.md) | Skill di esempio/template da copiare per crearne di nuove | 2026-07-01 |
+| [spec-architect](skills/spec-architect/SKILL.md) | Guida conversazionale, una decisione alla volta, dall'idea grezza a una specifica software completa (SRS) | 2026-07-01 |
 
 ## Come aggiungere una nuova skill
 
