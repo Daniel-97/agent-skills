@@ -22,6 +22,18 @@ Solo `SKILL.md` è obbligatorio: le altre cartelle si aggiungono solo se la skil
 |---|---|---|
 | [example-skill](skills/example-skill/SKILL.md) | Skill di esempio/template da copiare per crearne di nuove | 2026-07-01 |
 | [spec-architect](skills/spec-architect/SKILL.md) | Guida conversazionale, una decisione alla volta, dall'idea grezza a una specifica software completa (SRS) | 2026-07-01 |
+| [build-architect](skills/build-architect/SKILL.md) | Trasforma una specifica consolidata (SRS) in artefatti pratici per l'implementazione: piano milestone, schema database, AGENTS.md, README, scaffold di progetto | 2026-07-01 |
+
+## Skill gemelle: spec-architect + build-architect
+
+`spec-architect` e `build-architect` sono pensate per essere usate in sequenza, come due metà dello stesso percorso:
+
+- **spec-architect** guida dall'idea grezza a una specifica software completa (l'SRS) — risponde alla domanda "cosa costruire".
+- **build-architect** parte da una spec consolidata (idealmente l'SRS prodotto da spec-architect) e genera gli artefatti pratici per l'implementazione — risponde alla domanda "come costruirlo".
+
+Flusso tipico: "Ho un'idea per un'app" → `spec-architect` produce l'SRS → "Ora trasforma questa spec in un piano di implementazione" → `build-architect` produce milestone, schema DB, AGENTS.md, README e scaffold di progetto.
+
+Non è obbligatorio passare da spec-architect: `build-architect` può accettare anche una spec consolidata proveniente da altre fonti; se invece i requisiti sono ancora vaghi o contraddittori, rimanda a `spec-architect` prima di generare gli artefatti di build.
 
 ## Come aggiungere una nuova skill
 
