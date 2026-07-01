@@ -24,6 +24,7 @@ Solo `SKILL.md` è obbligatorio: le altre cartelle si aggiungono solo se la skil
 | [spec-architect](skills/spec-architect/SKILL.md) | Guida conversazionale, una decisione alla volta, dall'idea grezza a una specifica software completa (SRS) | 2026-07-01 |
 | [build-architect](skills/build-architect/SKILL.md) | Trasforma una specifica consolidata (SRS) in artefatti pratici per l'implementazione: piano milestone, schema database, AGENTS.md, README, scaffold di progetto | 2026-07-01 |
 | [startup-idea-validation](skills/startup-idea-validation/SKILL.md) | Guida un founder, una fase alla volta, nella validazione di un'idea di startup (Idea Stage): problem framing, devil's advocate, mappa competitiva, customer discovery, fino a un verdetto GO/PIVOT/NO-GO con Problem Validation Report | 2026-07-02 |
+| [latex-cv-reviewer](skills/latex-cv-reviewer/SKILL.md) | Revisiona un CV LaTeX (.tex) in 6 fasi (recruiter test, struttura, allineamento ATS/keyword, impact statement, posizionamento aziende target, polish finale), modificando solo il contenuto testuale | 2026-07-02 |
 
 ## Skill gemelle: spec-architect + build-architect
 
