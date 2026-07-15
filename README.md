@@ -1,8 +1,16 @@
 # agent-skills
 
-Raccolta personale di skill agentiche in formato [SKILL.md](https://github.com/anthropics/skills), sviluppate nel tempo per estendere le capacità di agenti AI (es. Claude) su compiti specifici e ripetibili.
+Raccolta personale di skill agentiche in formato [SKILL.md](https://github.com/anthropics/skills), sviluppate nel tempo per estendere le capacità di agenti AI (es. Claude) su compiti specifici e ripetibili. Il repo contiene inoltre le mie convenzioni personali di scrittura del codice, in formato agent-ready (vedi [Convenzioni personali di codice](#convenzioni-personali-di-codice)).
 
 ## Struttura
+
+Il repo è organizzato in due aree principali:
+
+```
+agent-skills/
+├── skills/          — le skill agentiche, una per cartella
+└── conventions/     — convenzioni personali di codice (AGENTS.md)
+```
 
 Ogni skill vive nella propria cartella sotto `skills/<nome-skill>/`:
 
@@ -26,6 +34,16 @@ Solo `SKILL.md` è obbligatorio: le altre cartelle si aggiungono solo se la skil
 | [startup-idea-validation](skills/startup-idea-validation/SKILL.md) | Guida un founder, una fase alla volta, nella validazione di un'idea di startup (Idea Stage): problem framing, devil's advocate, mappa competitiva, customer discovery, fino a un verdetto GO/PIVOT/NO-GO con Problem Validation Report | 2026-07-02 |
 | [latex-cv-reviewer](skills/latex-cv-reviewer/SKILL.md) | Revisiona un CV LaTeX (.tex) in 6 fasi (recruiter test, struttura, allineamento ATS/keyword, impact statement, posizionamento aziende target, polish finale), modificando solo il contenuto testuale | 2026-07-02 |
 | [telegram-bot-ux](skills/telegram-bot-ux/SKILL.md) | Best practice UX per bot Telegram (comandi, reply keyboard, inline keyboard). Usa SEMPRE questa skill quando l'utente progetta o sviluppa un bot Telegram e deve strutturare menu, pulsanti, comandi o flussi. | 2026-07-13 |
+
+## Convenzioni personali di codice
+
+La cartella [`conventions/`](conventions/) contiene le mie convenzioni personali di scrittura del codice, pensate per essere language-agnostic e riutilizzabili in qualunque progetto:
+
+- [`conventions/AGENTS.md`](conventions/AGENTS.md) — il documento completo: naming, stile e struttura del codice (early return, no magic numbers, layering, KISS/DRY/YAGNI), commenti, error handling e le 7 regole per i commit message di Chris Beams, con riferimenti e letture di approfondimento.
+
+Il file è pensato per un doppio uso: come documentazione leggibile e condivisibile, e come istruzioni da includere globalmente in un coding agent (es. `~/.claude/CLAUDE.md` o l'`AGENTS.md` globale dell'agente), così che ogni sessione di coding rispetti le stesse convenzioni senza doverle ripetere.
+
+> Nota: non confondere `conventions/AGENTS.md` (convenzioni personali di codice, riusabili ovunque) con l'[`AGENTS.md`](AGENTS.md) alla radice del repo, che contiene le regole specifiche per lavorare *su questo repo*.
 
 ## Skill gemelle: spec-architect + build-architect
 
