@@ -1,0 +1,7 @@
+{
+  "webmcp_version": "0.1",
+  "site": "https://<dominio>",
+  "tools_available": false,
+  "transactional_actions_available": false,
+  "notes": "This site does not expose browser-invocable tools or transactional actions. No probing needed."
+}

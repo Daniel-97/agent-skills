@@ -1,0 +1,51 @@
+// src/middleware.ts (Astro)
+//
+// Content negotiation: se il client preferisce text/markdown nell'header
+// Accept, e la pagina ha un alternate .md, servi direttamente quello.
+// Su ogni risposta HTML aggiunge:
+//  - header Link (canonical, alternate markdown, service-desc)
+//  - header Content-Signal (dichiarazione policy per pagina)
+//
+// Adatta i path/route in base alla struttura reale del tuo progetto.
+
+import { defineMiddleware } from "astro:middleware";
+
+const CONTENT_SIGNAL = "search=yes, ai-input=yes, ai-train=no";
+
+export const onRequest = defineMiddleware(async (context, next) => {
+  const { request, url } = context;
+  const accept = request.headers.get("accept") ?? "";
+  const prefersMarkdown =
+    accept.includes("text/markdown") &&
+    !accept.includes("text/html; q=1") || accept.startsWith("text/markdown");
+
+  // 1. Se il client chiede esplicitamente markdown e la route .md esiste, redirect/serve
+  if (prefersMarkdown && !url.pathname.endsWith(".md")) {
+    const mdPath = url.pathname.endsWith("/")
+      ? `${url.pathname.slice(0, -1)}.md`
+      : `${url.pathname}.md`;
+    return context.redirect(mdPath, 307);
+  }
+
+  const response = await next();
+
+  // 2. Aggiungi header Link + Content-Signal solo sulle risposte HTML
+  const contentType = response.headers.get("content-type") ?? "";
+  if (contentType.includes("text/html")) {
+    const canonical = `${url.origin}${url.pathname}`;
+    const mdAlternate = url.pathname.endsWith("/")
+      ? `${url.origin}${url.pathname.slice(0, -1)}.md`
+      : `${url.origin}${url.pathname}.md`;
+
+    const linkHeader = [
+      `<${canonical}>; rel="canonical"; type="text/html"`,
+      `<${mdAlternate}>; rel="alternate"; type="text/markdown"`,
+      `<${url.origin}/api/catalog.json>; rel="service-desc"; type="application/json"`,
+    ].join(", ");
+
+    response.headers.set("Link", linkHeader);
+    response.headers.set("Content-Signal", CONTENT_SIGNAL);
+  }
+
+  return response;
+});

@@ -1,0 +1,54 @@
+{
+  "site": "https://<dominio>",
+  "policy": {
+    "search_indexing": "allowed",
+    "ai_input": "allowed",
+    "model_training": "declined"
+  },
+  "representations": {
+    "html": "canonical",
+    "markdown": "available via Accept: text/markdown or .md suffix",
+    "llms_txt": "https://<dominio>/llms.txt",
+    "llms_full_txt": "https://<dominio>/llms-full.txt"
+  },
+  "capabilities": {
+    "discoverability": {
+      "status": "available",
+      "endpoints": ["/robots.txt", "/sitemap.xml", "/rss.xml", "/llms.txt", "/llms-full.txt"]
+    },
+    "content_accessibility": {
+      "status": "available",
+      "notes": "Markdown content negotiation via Accept header on every page"
+    },
+    "bot_access_control": {
+      "status": "available",
+      "notes": "robots.txt distinguishes retrieval vs training bots; Content-Signal header on every response"
+    },
+    "protocol_discovery": {
+      "status": "available",
+      "endpoints": [
+        "/.well-known/agent-readiness.json",
+        "/.well-known/skills/index.json",
+        "/.well-known/webmcp.json",
+        "/api/catalog.json",
+        "/api/openapi.json"
+      ]
+    },
+    "mcp_server": {
+      "status": "unavailable",
+      "reason": "No MCP transport is operated by this site."
+    },
+    "oauth_discovery": {
+      "status": "unavailable",
+      "reason": "No authenticated endpoints are exposed."
+    },
+    "dns_aid": {
+      "status": "unavailable",
+      "reason": "Not configured for this domain."
+    },
+    "commerce": {
+      "status": "unavailable",
+      "reason": "This is a personal site; no commerce protocols (x402, MPP, UCP, ACP) apply."
+    }
+  }
+}

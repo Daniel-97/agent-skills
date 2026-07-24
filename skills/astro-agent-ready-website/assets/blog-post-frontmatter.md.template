@@ -1,0 +1,20 @@
+---
+title: Titolo del post
+description: Descrizione breve per SEO/feed (1 frase)
+pubDate: 2026-01-01
+updatedDate: 2026-01-02      # opzionale
+category: Web Development
+tags: [Astro]
+hero:
+  src: https://esempio.com/immagine.jpg
+  alt: Descrizione immagine
+  credit: Fonte immagine
+  creditUrl: https://esempio.com
+aiSummary: Riassunto conciso, pensato per essere leggibile/citabile da un agente AI (finisce in llms.txt/llms-full.txt).
+canonical: https://esempio.com/post   # opzionale, se pubblicato anche altrove
+originalUrl: https://esempio.com/post # opzionale
+sources: []
+draft: false
+---
+
+Contenuto del post in Markdown...

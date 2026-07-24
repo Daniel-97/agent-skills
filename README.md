@@ -25,25 +25,11 @@ Solo `SKILL.md` è obbligatorio: le altre cartelle si aggiungono solo se la skil
 | [build-architect](skills/build-architect/SKILL.md) | Trasforma una specifica consolidata (SRS) in artefatti pratici per l'implementazione: piano milestone, schema database, AGENTS.md, README, scaffold di progetto | 2026-07-01 |
 | [startup-idea-validation](skills/startup-idea-validation/SKILL.md) | Guida un founder, una fase alla volta, nella validazione di un'idea di startup (Idea Stage): problem framing, devil's advocate, mappa competitiva, customer discovery, fino a un verdetto GO/PIVOT/NO-GO con Problem Validation Report | 2026-07-02 |
 | [latex-cv-reviewer](skills/latex-cv-reviewer/SKILL.md) | Revisiona un CV LaTeX (.tex) in 6 fasi (recruiter test, struttura, allineamento ATS/keyword, impact statement, posizionamento aziende target, polish finale), modificando solo il contenuto testuale | 2026-07-02 |
+| [astro-agent-ready-website](https://github.com/Daniel-97/agent-skills/blob/main/skills/astro-agent-ready-website/SKILL.md) | Crea siti personali (portfolio/blog) con Astro + TypeScript ottimizzati per SEO, AEO e agent readiness (llms.txt, content negotiation Markdown, robots.txt bot AI, endpoint .well-known), con workflow spec-driven e template pronti. Isprirazione: | 2026-07-24 |
 
-## Skill gemelle: spec-architect + build-architect
+## Fonti & Credits
 
-`spec-architect` e `build-architect` sono pensate per essere usate in sequenza, come due metà dello stesso percorso:
-
-- **spec-architect** guida dall'idea grezza a una specifica software completa (l'SRS) — risponde alla domanda "cosa costruire".
-- **build-architect** parte da una spec consolidata (idealmente l'SRS prodotto da spec-architect) e genera gli artefatti pratici per l'implementazione — risponde alla domanda "come costruirlo".
-
-Flusso tipico: "Ho un'idea per un'app" → `spec-architect` produce l'SRS → "Ora trasforma questa spec in un piano di implementazione" → `build-architect` produce milestone, schema DB, AGENTS.md, README e scaffold di progetto.
-
-Non è obbligatorio passare da spec-architect: `build-architect` può accettare anche una spec consolidata proveniente da altre fonti; se invece i requisiti sono ancora vaghi o contraddittori, rimanda a `spec-architect` prima di generare gli artefatti di build.
-
-## Come aggiungere una nuova skill
-
-1. Crea la cartella `skills/<nome-skill>/` usando il naming kebab-case.
-2. Scrivi `SKILL.md` partendo dal template in [skills/example-skill/SKILL.md](skills/example-skill/SKILL.md), con frontmatter YAML (`name`, `description`) e le istruzioni per l'agente.
-3. Aggiungi `scripts/`, `references/` o `assets/` solo se necessari.
-4. Aggiorna la tabella indice qui sopra con la nuova riga.
-5. Fai commit con messaggio `feat(nome-skill): descrizione breve`.
+> `astro-agent-ready-website` è basata su ["Building an Agent Friendly Personal Website with Specs"](https://dev.to/aws/building-an-agent-friendly-personal-website-with-specs-11b4) di Salih Güler, e sul relativo repo di riferimento [salihgueler/salih-dev](https://github.com/salihgueler/salih-dev).
 
 ## Convenzioni
 

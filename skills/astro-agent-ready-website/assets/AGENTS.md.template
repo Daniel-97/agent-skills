@@ -1,0 +1,33 @@
+# AGENTS.md
+
+Istruzioni persistenti per qualsiasi coding assistant che lavora su questo repo.
+
+## Stack
+- Astro + TypeScript. Non sostituire il framework senza approvazione esplicita.
+- Contenuti in Markdown sotto `src/content/blog/`, validati da `src/content.config.ts`.
+- Config identità/sito in `src/config/site.ts`.
+
+## Processo obbligatorio
+- Per ogni task non banale: proponi un piano con criteri di accettazione,
+  attendi approvazione, poi implementa.
+- Commit atomici con messaggi descrittivi.
+- Non scrivere test a meno che non venga chiesto esplicitamente.
+- Non fare deploy: è fuori scope di default.
+
+## Agent readiness — non rimuovere/rompere questi endpoint
+- `/robots.txt`, `/sitemap.xml`, `/rss.xml`
+- `/llms.txt`, `/llms-full.txt` (generati dinamicamente dal contenuto — non hardcodare)
+- `/.well-known/agent-readiness.json`
+- `/.well-known/skills/index.json`
+- `/.well-known/webmcp.json`
+- `/api/catalog.json`, `/api/openapi.json`
+- Middleware di content negotiation (`Accept: text/markdown`) e header `Link` /
+  `Content-Signal` su ogni pagina HTML
+
+Qualsiasi capacità non implementata deve rispondere con uno stato "unavailable"
+esplicito e un motivo — mai un 404 muto.
+
+## Import contenuti
+Gli script in `scripts/` richiedono metadati revisionati manualmente
+(categoria, riassunto AI) per ogni articolo importato. Se mancano, lo script
+deve fallire in modo esplicito, non procedere con un default silenzioso.

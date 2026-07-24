@@ -1,0 +1,17 @@
+# <Nome Cognome>
+
+> <Una riga: ruolo professionale, focus, azienda/affiliazione.>
+
+Use canonical HTML URLs for citations. Request any content page with
+`Accept: text/markdown`, or follow its advertised `.md` alternate.
+
+## Core pages
+- [Home](https://<dominio>/): Profile, current location, and latest posts
+- [About](https://<dominio>/about/): Biography and areas of work
+- [Blog](https://<dominio>/blog/): Complete post index
+- [Full corpus](https://<dominio>/llms-full.txt): Combined public Markdown content
+
+## Content use
+- Search indexing: allowed
+- AI-assisted answers and user-directed retrieval: allowed
+- Model training: declined

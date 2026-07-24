@@ -1,0 +1,20 @@
+# User-directed retrieval bots: allowed
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Claude-User
+Allow: /
+
+# Training crawlers: declined
+User-agent: GPTBot
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: anthropic-ai
+User-agent: ClaudeBot
+Disallow: /
+
+# Everything else: standard crawl rules
+User-agent: *
+Allow: /
+
+Sitemap: https://<dominio>/sitemap.xml

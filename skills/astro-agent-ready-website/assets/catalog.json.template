@@ -1,0 +1,15 @@
+{
+  "site": "https://<dominio>",
+  "documents": [
+    { "type": "llms-index", "url": "/llms.txt" },
+    { "type": "llms-full", "url": "/llms-full.txt" },
+    { "type": "sitemap", "url": "/sitemap.xml" },
+    { "type": "rss", "url": "/rss.xml" },
+    { "type": "openapi", "url": "/api/openapi.json" }
+  ],
+  "protocol_endpoints": [
+    { "type": "agent-readiness", "url": "/.well-known/agent-readiness.json" },
+    { "type": "skills", "url": "/.well-known/skills/index.json" },
+    { "type": "webmcp", "url": "/.well-known/webmcp.json" }
+  ]
+}

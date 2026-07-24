@@ -1,0 +1,11 @@
+{
+  "skills": [
+    {
+      "id": "read-markdown-content",
+      "description": "Read-only access to this site's public content as clean Markdown.",
+      "access": "read-only",
+      "how_to_invoke": "Request any content page with header 'Accept: text/markdown', or fetch its advertised .md alternate URL (e.g. /about.md).",
+      "scope": ["home", "about", "blog posts"]
+    }
+  ]
+}
